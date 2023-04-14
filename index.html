@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Daftar Hadir Siswa TJKT</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <center><img src="4tjkt.jpg " width="50px" height="50px">
+    <h1>Daftar Hadir Siswa TJKT</h1></center>
+    <center><p>Tanggal/Waktu: <span id="tanggalwaktu"></span></p></center>
+    <form id="form">
+      <label>
+        <span>Nama:</span>
+        <input type="text" name="nama" required>
+      </label>
+      <label>
+        <span>NIS:</span>
+        <input type="text" name="nis"  required>
+      </label>
+      <label>
+        <span>Mata Pelajaran:</span>
+        <input type="text" name="mapel" required>
+        </select>
+      </label>
+      <label>
+        <span>Nomor HP:</span>
+        <input type="tel" name="hp" pattern="\d{10,12}" placeholder="Contoh: 081234567890" required>
+      </label>
+      <button type="submit">Simpan</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script src="script.js"></script>
+
+    <script>
+    var tw = new Date();
+if (tw.getTimezoneOffset() == 0) (a=tw.getTime() + ( 7 *60*60*1000))
+else (a=tw.getTime());
+tw.setTime(a);
+var tahun= tw.getFullYear ();
+var hari= tw.getDay ();
+var bulan= tw.getMonth ();
+var tanggal= tw.getDate ();
+var hariarray=new Array("Minggu,","Senin,","Selasa,","Rabu,","Kamis,","Jum'at,","Sabtu,");
+var bulanarray=new Array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","Nopember","Desember");
+document.getElementById("tanggalwaktu").innerHTML = hariarray[hari]+" "+tanggal+" "+bulanarray[bulan]+" "+tahun;
+    </script>
+  </body>
+</html>
+
+    
